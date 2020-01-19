@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/badge/Unity-2019.2%2B-red.svg)
 ![](https://img.shields.io/badge/.NET-4.x-orange.svg)
-[![](https://img.shields.io/github/license/baba-s/unity-scene-data-transfer.svg)](https://github.com/baba-s/unity-scene-data-transfer/blob/master/LICENSE)
+[![](https://img.shields.io/github/license/baba-s/unity-scene-data-transfer.svg)](https://github.com/baba-s/unity-scene-data-transfer/blob/master/LICENSE.md)
 
 ## インストール
 
