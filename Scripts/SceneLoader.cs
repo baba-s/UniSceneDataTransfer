@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace KoganeUnityLib
 {
-	// シーンを読み込んだ時にデータを
+	// シーンを読み込んだ時にデータを渡すことができるクラス
 	public static class SceneLoader
 	{
 		// シーンにデータを渡してからシーンを読み込む
