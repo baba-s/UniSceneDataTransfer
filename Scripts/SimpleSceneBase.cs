@@ -10,7 +10,7 @@ namespace KoganeUnityLib
 		where TData : class, new()
 	{
 		// 渡されたデータ
-		[SerializeField] private TData m_entryData = new TData();
+		[SerializeField] private TData m_entryData = null;
 
 		// 渡されたデータを派生クラスで参照できるようにするプロパティ
 		protected TData entryData => m_entryData;
