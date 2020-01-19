@@ -16,6 +16,8 @@ manifest.json に上記の記述を追加します
 
 ## 使い方
 
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135440.png)
+
 シーンの名前とシーンを制御するコンポーネントの名前は同じにしておきます
 
 ```cs
@@ -115,7 +117,8 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-そのため、上記のようなコードを記述することで、シーンを直接起動した時は初期値を使用する、といったことができるようになります
+そのため、上記のようなコードを記述することで、
+シーンを直接起動した時は初期値を使用する、といったことができるようになります
 
 ```cs
 using System;
@@ -129,5 +132,7 @@ public class ResultData
 ```
 
 もしくは、シーンのデータを管理するクラスに Serializable 属性を適用することで
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135443.png)
 
 シーンを直接起動した時の entryData のパラメータを Unity の Inspector で設定することができます
