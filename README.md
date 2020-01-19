@@ -1,5 +1,7 @@
 # Unity Scene Data Transfer
 
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119140300.png)
+
 シーン遷移時にデータを渡すことができる機能
 
 ![](https://img.shields.io/badge/Unity-2019.2%2B-red.svg)
