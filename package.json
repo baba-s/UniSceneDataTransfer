@@ -1,0 +1,16 @@
+{
+    "name": "com.baba_s.unity-scene-data-transfer",
+    "displayName": "UnitySceneDataTransfer",
+    "version": "1.0.0",
+    "unity": "2019.2",
+    "author": "baba_s",
+    "description": "",
+    "dependencies": {},
+    "samples": [
+        {
+            "displayName": "Example",
+            "description": "Example",
+            "path": "Samples~/Example"
+        }
+    ]
+}
