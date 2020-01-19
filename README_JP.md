@@ -1,10 +1,8 @@
-[日本語の Readme はこちら](https://github.com/baba-s/unity-scene-data-transfer/blob/master/README_JP.md)  
-
 # Unity Scene Data Transfer
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119140300.png)
 
-Unity package to easily pass data at scene transition.  
+シーン遷移時に簡単にデータを渡すことができる機能
 
 ![](https://img.shields.io/badge/Unity-2019.2%2B-red.svg)
 ![](https://img.shields.io/badge/.NET-4.x-orange.svg)
@@ -16,13 +14,13 @@ Unity package to easily pass data at scene transition.
 "com.baba_s.unity-scene-data-transfer": "https://github.com/baba-s/unity-scene-data-transfer.git",
 ```
 
-Add the above dependencies to manifest.json.  
+manifest.json に上記の記述を追加します  
 
-## Usages
+## 使い方
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135440.png)
 
-The name of the scene and the name of the component that controls the scene must be the same.  
+シーンの名前とシーンを制御するコンポーネントの名前は同じにしておきます  
 
 ```cs
 public class ResultData
@@ -32,7 +30,7 @@ public class ResultData
 }
 ```
 
-Define the data class to be passed to the scene.  
+まず、シーンに渡したいデータを管理するクラスを定義して、  
 
 ```cs
 using UnityEngine;
@@ -41,7 +39,7 @@ public class ResultScene : MonoBehaviour
 {
 ```
 
-MonoBehaviour to control the scene,   
+シーンを制御する MonoBehaviour のコンポーネントを  
 
 ```cs
 using KoganeUnityLib;
@@ -51,9 +49,10 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
 {
 ```
 
-Change to extend SimpleSceneBase.  
+SimpleSceneBase を継承するように変更します  
 
-- Add `using KoganeUnityLib;` .
+- `using KoganeUnityLib;` を追加する必要があります  
+- SimpleSceneBase の型パラメータには、シーンのクラスとデータのクラスを指定します  
 
 ```cs
 using KoganeUnityLib;
@@ -68,7 +67,7 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-Then, the passed data can be referenced by entryData property.  
+すると、entryData プロパティを使用して、他のシーンから渡されたデータを参照できるようになります  
 
 ```cs
 var data = new ResultData
@@ -79,21 +78,21 @@ var data = new ResultData
 ResultScene.Load( data );
 ```
 
-After that, by writing the above code in another scene, you can transition the scene while passing data.  
+あとは、他のシーンで上記のようなコードを記述することで、データを渡しながらシーン遷移できます  
 
-## Remarks: Awake, OnEnable
+## 補足：Awake や OnEnable では entryData を使用できない
 
 ```cs
 public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
 {
-    // Cannot
+    // ダメ
     private void Awake()
     {
         Debug.Log( entryData.Score );
         Debug.Log( entryData.Rank );
     }
     
-    // Cannot
+    // ダメ
     private void OnEnable()
     {
         Debug.Log( entryData.Score );
@@ -101,11 +100,12 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-- entryData property is not available for Awake, OnEnable.  
+- Awake や OnEnable で entryData プロパティを参照しても正常な値を取得できません  
+- entryData プロパティは Start 以降で正しく参照することができます  
 
-## Remarks: Launch directly
+## 補足2：シーンを直接起動した時に entryData を使用する方法
 
-When launching the scene directly, entryData is null.  
+シーンを直接起動した時は entryData は null になっています  
 
 ```cs
 public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
@@ -119,8 +119,8 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-Therefore, by writing the above code,  
-When the scene is started directly, the dummy data can be used.  
+そのため、上記のようなコードを記述することで、  
+シーンを直接起動した時は初期値を使用する、といったことができるようになります  
 
 ```cs
 using System;
@@ -133,8 +133,8 @@ public class ResultData
 }
 ```
 
-Alternatively, by applying the Serializable attribute to the data class,  
+もしくは、シーンのデータを管理するクラスに Serializable 属性を適用することで  
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135443.png)
 
-entryData used when launching the scene directly can be set in Unity Inspector.  
+シーンを直接起動した時の entryData のパラメータを Unity の Inspector で設定することができます  
