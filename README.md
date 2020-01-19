@@ -51,7 +51,7 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
 {
 ```
 
-Change to extend SimpleSceneBase.  
+Change to inheritance SimpleSceneBase.  
 
 - Add `using KoganeUnityLib;` .
 
