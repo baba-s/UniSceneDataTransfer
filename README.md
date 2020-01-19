@@ -18,7 +18,7 @@ manifest.json に上記の記述を追加します
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135440.png)
 
-シーンの名前とシーンを制御するコンポーネントの名前は同じにしておきます
+シーンの名前とシーンを制御するコンポーネントの名前は同じにしておきます  
 
 ```cs
 public class ResultData
@@ -28,7 +28,7 @@ public class ResultData
 }
 ```
 
-まず、シーンに渡したいデータを管理するクラスを定義して、
+まず、シーンに渡したいデータを管理するクラスを定義して、  
 
 ```cs
 using UnityEngine;
@@ -37,7 +37,7 @@ public class ResultScene : MonoBehaviour
 {
 ```
 
-シーンを制御する MonoBehaviour のコンポーネントを
+シーンを制御する MonoBehaviour のコンポーネントを  
 
 ```cs
 using KoganeUnityLib;
@@ -47,10 +47,10 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
 {
 ```
 
-SimpleSceneBase を継承するように変更します
+SimpleSceneBase を継承するように変更します  
 
-- `using KoganeUnityLib;` を追加する必要があります
-- SimpleSceneBase の型パラメータには、シーンのクラスとデータのクラスを指定します
+- `using KoganeUnityLib;` を追加する必要があります  
+- SimpleSceneBase の型パラメータには、シーンのクラスとデータのクラスを指定します  
 
 ```cs
 using KoganeUnityLib;
@@ -65,7 +65,7 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-すると、entryData プロパティを使用して、他のシーンから渡されたデータを参照できるようになります
+すると、entryData プロパティを使用して、他のシーンから渡されたデータを参照できるようになります  
 
 ```cs
 var data = new ResultData
@@ -76,7 +76,7 @@ var data = new ResultData
 ResultScene.Load( data );
 ```
 
-あとは、他のシーンで上記のようなコードを記述することで、データを渡しながらシーン遷移できます
+あとは、他のシーンで上記のようなコードを記述することで、データを渡しながらシーン遷移できます  
 
 ## 補足：Awake や OnEnable では entryData を使用できない
 
@@ -98,12 +98,12 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-- Awake や OnEnable で entryData プロパティを参照しても正常な値を取得できません
-- entryData プロパティは Start 以降で正しく参照することができます
+- Awake や OnEnable で entryData プロパティを参照しても正常な値を取得できません  
+- entryData プロパティは Start 以降で正しく参照することができます  
 
 ## 補足2：シーンを直接起動した時に entryData を使用する方法
 
-シーンを直接起動した時は entryData は null になっています
+シーンを直接起動した時は entryData は null になっています  
 
 ```cs
 public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
@@ -117,8 +117,8 @@ public class ResultScene : SimpleSceneBase<ResultScene, ResultData>
     }
 ```
 
-そのため、上記のようなコードを記述することで、
-シーンを直接起動した時は初期値を使用する、といったことができるようになります
+そのため、上記のようなコードを記述することで、  
+シーンを直接起動した時は初期値を使用する、といったことができるようになります  
 
 ```cs
 using System;
@@ -131,8 +131,8 @@ public class ResultData
 }
 ```
 
-もしくは、シーンのデータを管理するクラスに Serializable 属性を適用することで
+もしくは、シーンのデータを管理するクラスに Serializable 属性を適用することで  
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119135443.png)
 
-シーンを直接起動した時の entryData のパラメータを Unity の Inspector で設定することができます
+シーンを直接起動した時の entryData のパラメータを Unity の Inspector で設定することができます  
