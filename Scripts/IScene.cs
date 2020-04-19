@@ -1,4 +1,4 @@
-﻿namespace KoganeUnityLib
+﻿namespace UniSceneDataTransfer
 {
 	// データの受け渡しが可能なシーンのインターフェイス
 	public interface IScene<in TData> where TData : class, new()

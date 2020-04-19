@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-namespace KoganeUnityLib
+namespace UniSceneDataTransfer
 {
 	// シーンを読み込んだ時にデータを渡すことができるクラス
 	public static class SceneLoader

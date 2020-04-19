@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KoganeUnityLib.Example
+namespace UniSceneDataTransfer.Example
 {
 	// タイトルシーンに渡すデータ
 	[Serializable]

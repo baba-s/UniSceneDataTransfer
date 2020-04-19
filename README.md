@@ -1,22 +1,10 @@
 [日本語の Readme はこちら](https://github.com/baba-s/unity-scene-data-transfer/blob/master/README_JP.md)  
 
-# Unity Scene Data Transfer
+# Uni Scene Data Transfer
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119140300.png)
 
 Unity package to easily pass data at scene transition.  
-
-![](https://img.shields.io/badge/Unity-2019.2%2B-red.svg)
-![](https://img.shields.io/badge/.NET-4.x-orange.svg)
-[![](https://img.shields.io/github/license/baba-s/unity-scene-data-transfer.svg)](https://github.com/baba-s/unity-scene-data-transfer/blob/master/LICENSE.md)
-
-## Install
-
-```json
-"com.baba_s.unity-scene-data-transfer": "https://github.com/baba-s/unity-scene-data-transfer.git",
-```
-
-Add the above dependencies to manifest.json.  
 
 ## Usages
 

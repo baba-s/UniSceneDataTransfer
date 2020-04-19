@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KoganeUnityLib
+namespace UniSceneDataTransfer
 {
 	// データの受け渡しを可能にするシーンの基底クラス
 	public abstract class SimpleSceneBase<TScene, TData> :

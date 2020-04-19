@@ -1,20 +1,8 @@
-# Unity Scene Data Transfer
+# Uni Scene Data Transfer
 
 ![](https://cdn-ak.f.st-hatena.com/images/fotolife/b/baba_s/20200119/20200119140300.png)
 
 シーン遷移時に簡単にデータを渡すことができる機能
-
-![](https://img.shields.io/badge/Unity-2019.2%2B-red.svg)
-![](https://img.shields.io/badge/.NET-4.x-orange.svg)
-[![](https://img.shields.io/github/license/baba-s/unity-scene-data-transfer.svg)](https://github.com/baba-s/unity-scene-data-transfer/blob/master/LICENSE.md)
-
-## インストール
-
-```json
-"com.baba_s.unity-scene-data-transfer": "https://github.com/baba-s/unity-scene-data-transfer.git",
-```
-
-manifest.json に上記の記述を追加します  
 
 ## 使い方
 
